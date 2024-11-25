@@ -2,12 +2,12 @@ import React, { useRef, useState } from 'react';
 import { GRID_OPTIONS, SUB_GRID_OPTIONS } from '../../lib/constants';
 import { GridstackItem, GridstackProvider } from '../../lib';
 import { GridStackOptions } from 'gridstack';
-import './demo.css';
+import './demo.scss';
 
 const gridOptions: GridStackOptions = {
   children: [
-    { h: 2, id: 'item1', w: 2, x: 0, y: 0 },
-    { h: 2, id: 'item2', w: 2, x: 0, y: 0 },
+    { h: 2, id: 'item1', w: 18, x: 0, y: 0 },
+    { h: 2, id: 'item2', w: 18, x: 0, y: 0 },
     {
       h: 5,
       id: 'sub-grid-1',
@@ -22,15 +22,15 @@ const gridOptions: GridStackOptions = {
             locked: true,
             noMove: true,
             noResize: true,
-            w: 12,
+            w: 36,
             x: 0,
             y: 0,
           },
-          { h: 2, id: 'item3', w: 2, x: 0, y: 0 },
-          { h: 2, id: 'item4', w: 2, x: 0, y: 0 },
+          { h: 2, id: 'item3', w: 18, x: 0, y: 0 },
+          { h: 2, id: 'item4', w: 18, x: 0, y: 0 },
         ],
       },
-      w: 12,
+      w: 36,
       x: 0,
       y: 0,
     },

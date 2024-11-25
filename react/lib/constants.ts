@@ -9,23 +9,19 @@ export const BREAKPOINTS = [
 
 export const SUB_GRID_OPTIONS: GridStackOptions = {
   acceptWidgets: true,
-  column: 12,
-  columnOpts: {
-    breakpoints: BREAKPOINTS,
-    layout: 'moveScale',
-  },
-  margin: 8,
+  column: 144,
+
   minRow: 2,
+  margin: 0,
+
 } as const;
 
 export const GRID_OPTIONS: GridStackOptions = {
   acceptWidgets: true,
-  columnOpts: {
-    breakpointForWindow: true,
-    breakpoints: BREAKPOINTS,
-    layout: 'moveScale',
-  },
-  float: false,
-  margin: 8,
+
+  float: true,
   subGridOpts: SUB_GRID_OPTIONS,
+
+  margin: 0,
+  column: 144,
 } as const;
