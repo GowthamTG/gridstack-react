@@ -6,10 +6,10 @@ import './demo.scss';
 
 const gridOptions: GridStackOptions = {
   children: [
-    { h: 2, id: 'item1', w: 18, x: 0, y: 0 },
-    { h: 2, id: 'item2', w: 18, x: 0, y: 0 },
+    { h: 18, id: 'item1', w: 18, x: 0, y: 0 },
+    { h: 18, id: 'item2', w: 18, x: 0, y: 0 },
     {
-      h: 5,
+      h: 45,
       id: 'sub-grid-1',
       noResize: true,
       sizeToContent: true,
@@ -17,7 +17,7 @@ const gridOptions: GridStackOptions = {
         ...SUB_GRID_OPTIONS,
         children: [
           {
-            h: 1,
+            h: 9,
             id: 'sub-grid-1-title',
             locked: true,
             noMove: true,
@@ -26,8 +26,8 @@ const gridOptions: GridStackOptions = {
             x: 0,
             y: 0,
           },
-          { h: 2, id: 'item3', w: 18, x: 0, y: 0 },
-          { h: 2, id: 'item4', w: 18, x: 0, y: 0 },
+          { h: 18, id: 'item3', w: 18, x: 0, y: 0 },
+          { h: 18, id: 'item4', w: 18, x: 0, y: 0 },
         ],
       },
       w: 36,

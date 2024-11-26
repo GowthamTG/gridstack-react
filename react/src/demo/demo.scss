@@ -76,17 +76,21 @@ h1 {
   height: 100%;
 }
 
+$columns-max: 144;
 
-$columns: 144;
 @function fixed($float) {
-  @return round($float * 1000) / 1000; // total 2+3 digits being %
+  @return round($float * 1000) / 1000;
 }
-.gs-#{$columns} > .grid-stack-item {
 
-  width: fixed(100% / $columns);
+@for $columns from 1 through $columns-max {
 
-  @for $i from 1 through $columns - 1 {
-    &[gs-x='#{$i}'] { left: fixed((100% / $columns) * $i); }
-    &[gs-w='#{$i+1}'] { width: fixed((100% / $columns) * ($i+1)); }
+  .gs-#{$columns} > .grid-stack-item {
+
+    width: fixed(100% / $columns);
+  
+    @for $i from 1 through $columns - 1 {
+      &[gs-x='#{$i}'] { left: fixed((100% / $columns) * $i); }
+      &[gs-w='#{$i+1}'] { width: fixed((100% / $columns) * ($i+1)); }
+    }
   }
 }
