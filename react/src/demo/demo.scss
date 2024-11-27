@@ -75,3 +75,25 @@ h1 {
 .h-full {
   height: 100%;
 }
+
+$columns-max: 288;
+
+@function fixed($float) {
+  @return round($float * 1000) / 1000;
+}
+
+@for $columns from 1 through $columns-max {
+  .gs-#{$columns} > .grid-stack-item {
+    width: calc(100% / #{$columns});
+  
+    @for $i from 1 through $columns - 1 {
+      &[gs-x='#{$i}'] { left: calc((100% / #{$columns}) * #{$i}); }
+      &[gs-w='#{$i+1}'] { width: calc((100% / #{$columns}) * #{$i + 1}); }
+    }
+
+    @for $i from $columns through $columns-max + 1 {
+      &[gs-x='#{$i}'] { left: 0 }
+      &[gs-w='#{$i+1}'] { width: 100%; }
+    }
+  }
+}

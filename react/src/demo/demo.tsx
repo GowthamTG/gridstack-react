@@ -2,35 +2,36 @@ import React, { useRef, useState } from 'react';
 import { GRID_OPTIONS, SUB_GRID_OPTIONS } from '../../lib/constants';
 import { GridstackItem, GridstackProvider } from '../../lib';
 import { GridStackOptions } from 'gridstack';
-import './demo.css';
+import './demo.scss';
 
 const gridOptions: GridStackOptions = {
   children: [
-    { h: 2, id: 'item1', w: 2, x: 0, y: 0 },
-    { h: 2, id: 'item2', w: 2, x: 0, y: 0 },
+    { h: 18, id: 'item1', w: 18, x: 0, y: 0 },
+    { h: 18, id: 'item2', w: 18, x: 0, y: 0 },
+    { h: 18, id: 'item3', w: 18, x: 0, y: 0 },
+    { h: 18, id: 'item4', w: 18, x: 0, y: 0 },
     {
-      h: 5,
+      h: 45,
       id: 'sub-grid-1',
-      noResize: true,
       sizeToContent: true,
       subGridOpts: {
         ...SUB_GRID_OPTIONS,
         children: [
           {
-            h: 1,
+            h: 9,
             id: 'sub-grid-1-title',
             locked: true,
             noMove: true,
             noResize: true,
-            w: 12,
+            w: 144,
             x: 0,
             y: 0,
           },
-          { h: 2, id: 'item3', w: 2, x: 0, y: 0 },
-          { h: 2, id: 'item4', w: 2, x: 0, y: 0 },
+          { h: 18, id: 'item3', w: 18, x: 0, y: 0 },
+          { h: 18, id: 'item4', w: 18, x: 0, y: 0 },
         ],
       },
-      w: 12,
+      w: 144,
       x: 0,
       y: 0,
     },
@@ -46,8 +47,6 @@ const gridOptions2: GridStackOptions = {
     {
       h: 5,
       id: 'sub-grid-2',
-      noResize: true,
-      sizeToContent: true,
       subGridOpts: {
         ...SUB_GRID_OPTIONS,
         children: [
@@ -76,6 +75,8 @@ const gridOptions2: GridStackOptions = {
 const WIDGETS_NODE_MAP: Record<string, React.ReactNode> = {
   item1: <div className="w-full h-full">Item 1</div>,
   item2: <div className="w-full h-full">Item 2</div>,
+  item3: <div className="w-full h-full">Item 3</div>,
+  item4: <div className="w-full h-full">Item 4</div>,
   'sub-grid-1': (
     <>
       <GridstackItem id="sub-grid-1-title">

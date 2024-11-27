@@ -1,32 +1,33 @@
 import { GridStackOptions } from 'gridstack';
 
 export const BREAKPOINTS = [
-  { c: 1, w: 700 },
-  { c: 3, w: 850 },
-  { c: 6, w: 950 },
-  { c: 8, w: 1100 },
+  { c: 36, w: 720 },
+  { c: 48, w: 840 },
+  { c: 72, w: 960 },
+  { c: 96, w: 1080 },
+  { c: 144, w: 1440 },
+  { c: 288, w: 2160 },
 ];
-const cellHeight = 50;
 
 export const SUB_GRID_OPTIONS: GridStackOptions = {
   acceptWidgets: true,
   columnOpts: {
     breakpoints: BREAKPOINTS,
-    layout: 'moveScale',
+    layout: "move",
   },
-  margin: 8,
-  minRow: 2,
-  cellHeight,
+  margin: 0,
+  minRow: 10,
+  cellHeight: 10,
 } as const;
 
 export const GRID_OPTIONS: GridStackOptions = {
   acceptWidgets: true,
-  columnOpts: {
-    breakpointForWindow: true,
-    breakpoints: BREAKPOINTS,
-    layout: 'moveScale',
-  },
-  margin: 8,
-  cellHeight,
   subGridOpts: SUB_GRID_OPTIONS,
+  margin: 0,
+  cellHeight: 10,  
+  columnOpts: {
+    breakpoints: BREAKPOINTS,
+    layout: "move",
+  },
+  column: 288,
 } as const;
