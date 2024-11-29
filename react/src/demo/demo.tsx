@@ -6,7 +6,7 @@ import './demo.scss';
 
 const gridOptions: GridStackOptions = {
   children: [
-    { h: 18, id: 'item1', w: 18, x: 0, y: 0 },
+    { h: 18, id: 'item1', w: 18, x: 0, y: 0,sizeToContent: true },
     { h: 18, id: 'item2', w: 18, x: 0, y: 0 },
     { h: 18, id: 'item3', w: 18, x: 0, y: 0 },
     { h: 18, id: 'item4', w: 18, x: 0, y: 0 },
@@ -73,7 +73,7 @@ const gridOptions2: GridStackOptions = {
 };
 
 const WIDGETS_NODE_MAP: Record<string, React.ReactNode> = {
-  item1: <div className="w-full h-full">Item 1</div>,
+  item1: <textarea className='overflow-hidden field-size-content textarea' />,
   item2: <div className="w-full h-full">Item 2</div>,
   item3: <div className="w-full h-full">Item 3</div>,
   item4: <div className="w-full h-full">Item 4</div>,

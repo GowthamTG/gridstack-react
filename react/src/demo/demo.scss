@@ -90,10 +90,18 @@ $columns-max: 288;
       &[gs-x='#{$i}'] { left: calc((100% / #{$columns}) * #{$i}); }
       &[gs-w='#{$i+1}'] { width: calc((100% / #{$columns}) * #{$i + 1}); }
     }
-
-    @for $i from $columns through $columns-max + 1 {
-      &[gs-x='#{$i}'] { left: 0 }
-      &[gs-w='#{$i+1}'] { width: 100%; }
-    }
   }
+}
+
+.overflow-hidden {
+  overflow: none;
+}
+
+.field-size-content {
+  field-sizing: content;
+}
+
+
+.textarea {
+  resize: none;
 }
